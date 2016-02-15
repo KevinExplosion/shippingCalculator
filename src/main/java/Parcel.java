@@ -27,5 +27,15 @@ public class Parcel {
     return mWeight;
   }
 
+  public int getVolume() {
+    return (mHeight * mWidth * mLength);
+  }
 
+  public int getShippingSize() {
+    return ((getWeight() / 2) * getVolume());
+  }
+
+  public int getShippingCost(int distance,int priority) {
+    return getShippingSize() * (distance + priority);
+  }
 }
